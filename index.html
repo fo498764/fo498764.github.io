@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../css/navRightDropDown.css" rel="stylesheet" type="text/css" />
+    <title>index</title>
+    <style>
+        #wrapper{ 
+            width:1370px;
+            height:auto;
+            margin:0px auto;    
+            overflow:hidden;
+        }
+        /*最上面的導覽列*/
+        #navTop{ 
+            background-color:#39b706;
+            width:1370px;
+            height:70px;
+            font-size:16pt;
+            font-family:fantasy;
+        }   
+        /*導覽列靠左邊*/ /*圖片*/
+        #navTopleft{
+            float:left;
+        }
+        /*首頁圖片的旁邊文字*/
+        #navTopText{
+            position:relative;
+            top:-26px;
+            font-weight:bold;
+        }
+        /*導覽列靠右邊*/
+        #navTopRight{ 
+            float:right;
+        }
+        /*歡迎來到C#教學網*/
+        #top { 
+            width:1370px;
+            height:70px;
+            background-color:#00ffff;
+        }
+        /*歡迎來到C#教學網*/
+        #topText {
+            position: relative;
+            top:20px;
+            left:220px;
+            font-size:20pt;
+            font-weight:bold;
+            letter-spacing: 20px;
+        }
+        /*快速前往*/  
+        #navLeft { 
+            background-color: #eee;
+            width: 200px;
+            height: 500px;
+            text-align: left;
+            padding-left: 10px;
+            border: 3px solid #808080;
+            line-height:50px;
+            margin-left:0px;
+            float:left;
+        }
+        /*快速前往*/  
+        #navLeft ul{
+            padding-left:10px;
+            padding-right:10px;
+        }
+        /*快速前往*/  
+        #navLeft li{ 
+            list-style-type: square;
+            color:#f00;
+            font-weight:bold;
+        }
+        /*內容*/
+        #contect { 
+            float:right;
+            background-color:#eee;
+            width:1140px;
+            height:505px;
+            display:inline-block;
+            text-shadow:2px 2px 2px 2px;
+            padding-left:6px;
+        }
+        /*button的CSS*/
+        #button{ 
+            height:100px;
+            width:300px;
+            position:relative;
+            top:180px;
+            left:100px;
+            font-size:16pt;
+            border-radius:15%;
+            background-color:#00ff21;
+            font-weight:bold;
+        }
+        /*移過去底色*/
+        #button:hover{
+            box-shadow:1px 1px 1px 1px;
+        }
+        /*教學影片*/
+        #iframe{ 
+            position:relative;
+            left:530px;
+        }
+        /*最下面的部分*/
+        #footer{ 
+            clear:both;
+            width:100%;
+            height:80px;
+            background-color:#000;
+            color:#eee;
+            text-align:center;
+            padding-top:50px;
+        }
+        
+    </style>
+    <script>
+        function goToNext() {
+            location.href = "../htmlGroup/one.html";
+        }
+        function nowDate() {
+            var x = document.getElementById("date");
+            var current = new Date();
+            var strDate = current.getUTCFullYear() + "/" +
+                (current.getUTCMonth() + 1).toString() + "/" +
+                current.getUTCDate();
+            x.innerHTML = strDate;
+        }
+    </script>
+</head>
+<body onload="nowDate()">
+    <div id="wrapper">
+        <div id="navTop">
+            <div id="navTopleft">
+                <a href="../htmlGroup/index.html"><img src="../indexImage/topCS.png" /></a>
+                <span id="navTopText">目前位置：首頁</span>
+            </div>
+            <div id="navTopRight">
+                <ul class="dropDown">
+                    <li><a href="#">文件參考▼</a>
+                        <ul>
+                            <li><a href="https://www.w3schools.com/cs/index.php" target="_blank">w3school</a></li>
+                            <li><a href="https://docs.microsoft.com/zh-tw/dotnet/csharp/" target="_blank">Microsoft</a></li>
+                        </ul>
+                    </li> 
+                    <li><a href="#">下載專區▼</a>
+                        <ul>
+                            <li><a href="https://visualstudio.microsoft.com/zh-hant/downloads/" target="_blank">VS 2019</a></li>
+                        </ul>
+                    </li>
+                </ul>      
+            </div>       
+        </div>
+        
+        <div id="top">
+            <span id="topText">歡迎來到 ~ C#教學網</span>
+        </div>
+
+        <div id="navLeft">
+            <h2 style="text-align:left">↓章節選擇↓</h2>
+            <ul>
+                <li><a href="../htmlGroup/one.html" target="_blank">第一章 - 基本環境教學</a></li>
+                <li><a href="../htmlGroup/two.html" target="_blank">第二章 - 資料型別&變數</a></li>
+                <li><a href="../htmlGroup/three.html" target="_blank">第三章 - 介面設計與實作</a></li>
+                <li><a href="../htmlGroup/four.html" target="_blank">第四章 - if...else選擇結構</a></li>
+                <li><a href="../htmlGroup/five.html" target="_blank">第五章 - 迴圈</a></li>
+            </ul>
+            今天日期是：<br />
+            <div id="date"></div>
+        </div>
+
+        <div id="contect">
+            <input name="Button1" type="button" value="開始學習 GO!" id="button" onclick="goToNext()"/>
+            <div id="iframe">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dgUc460SPgw" title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="footer">
+            版權所有 copyright © 2021 吳泊諺 All Rights Reserved.
+        </div>
+
+    </div>
+    
+</body>
+</html>

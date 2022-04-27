@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>第二章 - 資料型別&變數</title>
+    <link href="../css/navRightDropDown.css" rel="stylesheet" type="text/css" />
+    <link href="../css/all.css" rel="stylesheet" type="text/css" />
+    <style>
+        /*歡迎來到C#教學網*/
+        #topText {
+            position: relative;
+            top:20px;
+            left:145px;
+            font-size:20pt;
+            font-weight:bold;
+            letter-spacing:20px;
+            text-shadow:0 0 0.2em #4cff00 , 0 0 0.2em #4cff00;
+        }
+
+        td{
+            border-bottom:1px solid #0094ff;
+        }
+    </style>
+    <script>
+        function backButton() {
+            window.location.href = "../htmlGroup/one.html";
+        }
+        function nextButton() {
+            window.location.href = "../htmlGroup/three.html";
+        }
+        function click1() {
+            location.href = "#toptop";
+        }
+        function nowDate() {
+            var x = document.getElementById("date");
+            var current = new Date();
+            var strDate = current.getUTCFullYear() + "/" +
+                (current.getUTCMonth() + 1).toString() + "/" +
+                current.getUTCDate();
+            x.innerHTML = strDate;
+        }
+    </script>
+</head>
+<body onload="nowDate()">
+    <div id="toptop"></div>
+    <div id="wrapper">
+        <div id="navTop">
+            <div id="navTopleft">
+                <a href="../index.html" target="_blank"><img src="../indexImage/topCS.png" /></a>
+                <span id="navTopText">目前位置：第二章 - 資料型別&變數</span>
+            </div>
+            <div id="navTopRight">
+                <ul class="dropDown">
+                    <li>
+                        <a href="#">文件參考▼</a>
+                        <ul>
+                            <li><a href="https://www.w3schools.com/cs/index.php" target="_blank">w3school</a></li>
+                            <li><a href="https://docs.microsoft.com/zh-tw/dotnet/csharp/" target="_blank">Microsoft</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">下載專區▼</a>
+                        <ul>
+                            <li><a href="https://visualstudio.microsoft.com/zh-hant/downloads/" target="_blank">VS 2019</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="top">
+            <span id="topText">資料型別&變數</span>
+        </div>
+
+        <div id="navLeft">
+            <h2 style="text-align:left">↓章節選擇↓</h2>
+            <ul>
+                <li><a href="../htmlGroup/one.html" target="_blank">第一章 - 基本環境教學</a></li>
+                <li><a href="../htmlGroup/two.html" target="_blank">第二章 - 資料型別&變數</a></li>
+                <li><a href="../htmlGroup/three.html" target="_blank">第三章 - 介面設計與實作</a></li>
+                <li><a href="../htmlGroup/four.html" target="_blank">第四章 - if...else選擇結構</a></li>
+                <li><a href="../htmlGroup/five.html" target="_blank">第五章 - 迴圈</a></li>
+            </ul>
+            今天日期是：<br />
+            <div id="date"></div>
+        </div>
+
+        <div id="contect">
+            <h2>資料型別&變數</h2>
+            <p>本章節會介紹C#常使用到的資料型別和變數</p>
+            <hr />
+            <p>在C#中，使用變數前都需要先進行資料型別的宣告，否則電腦會看不懂你要使用什麼資料型別，進而產生錯誤</p>
+            <p>以下將舉例最常用到的資料型別、資料型別大小範圍、如何使用。如需更詳細的內容，可參閱網頁上方的"文件參考"</p>
+            <p>使用資料型別時，請注意英文大小寫，須完全符合才行</p>
+            <table style="width:70%;border:1px solid #0094ff;text-align:center;">
+                <tr>
+                    <th>資料型別</th>
+                    <th>範圍</th>
+                    <th>範例</th>
+                </tr>
+                <tr>
+                    <td>bool</td>
+                    <td>True、False</td>
+                    <td>bool varName = true;</td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>-2,147,483,648 ~ +2,417,483,647</td>
+                    <td>int varName = 123;</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>±1.5 x 10<sup>-45</sup> ~ ±3.4 x 10<sup>38</sup></td>
+                    <td>float varName = 123.45F;</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>0 ~ 65,535</td>
+                    <td>
+                        char varName = 'A';<br />
+                        char varName = 'a';<br />
+                        注意:單引號
+                    </td>
+                </tr>
+                <tr>
+                    <td>string</td>
+                    <td> - </td>
+                    <td>
+                        string varName = "Test";<br />
+                        string varName = "Test" + "測試";<br />
+                        注意:雙引號
+                    </td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>±5.0 × 10<sup>−324</sup> ~ ±1.7 × 10 <sup>308</sup></td>
+                    <td>double varName = 1.0d;</td>
+                </tr>
+            </table>
+            <p>
+                <span style="line-height:0px;font-weight:normal;font-size:10pt;float:right;padding-right:340px;color:#f00;">
+                    *varName為變數名稱，可以自行定義但不可使用關鍵字、數字開頭、特殊符號(除了_ @)
+                </span>
+            </p><br />
+            <hr />
+            <h2>算術運算子</h2>
+            <p>這部分，介紹數學運算式</p>
+            <table style="width:70%;border:1px solid #0094ff;text-align:center;">
+                <tr>
+                    <th>符號</th>
+                    <th>意義</th>
+                    <th>如何使用</th>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>相加運算子</td>
+                    <td>i = j + k</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>相減運算子</td>
+                    <td>i = j - k</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>相乘運算子</td>
+                    <td>i = j * k</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>相除運算子</td>
+                    <td>i = j / k</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>取餘數運算子</td>
+                    <td>i = j % k</td>
+                </tr>
+            </table>
+            <p>範例，Button按鈕為該運算式，Label標籤為結果</p>
+            <img src="../twoImage/2-1.jpg" />
+            <p>完整程式碼：</p>
+            <textarea name="TextArea1" rows="20" cols="70">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FormsPrt
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = Convert.ToString(Convert.ToInt16(10 + 10));
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label2.Text = Convert.ToString(Convert.ToInt16(10 - 10));
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            label3.Text = Convert.ToString(Convert.ToInt16(10 * 10));
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label4.Text = Convert.ToString(Convert.ToInt16(10 / 10));
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            label5.Text = Convert.ToString(Convert.ToInt16(10 % 8));
+        }
+    }
+}
+</textarea>
+            <hr />
+            <h2>關係運算子</h2>
+            <p>這部分，介紹關係運算子。</p>
+            <table style="width:70%;border:1px solid #0094ff;text-align:center;">
+                <tr>
+                    <th>符號</th>
+                    <th>意義</th>
+                    <th>如何使用</th>
+                </tr>
+                <tr>
+                    <td>==</td>
+                    <td>相等</td>
+                    <td>a == b</td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>不相等</td>
+                    <td>a != b</td>
+                </tr>
+                <tr>
+                    <td>></td>
+                    <td>大於</td>
+                    <td>a > b</td>
+                </tr>
+                <tr>
+                    <td><</td>
+                    <td>小於</td>
+                    <td>a < b</td>
+                </tr>
+                <tr>
+                    <td>>=</td>
+                    <td>大於或等於</td>
+                    <td>a >= b</td>
+                </tr>
+                <tr>
+                    <td><=</td>
+                    <td>小於或等於</td>
+                    <td>a <= b</td>
+                </tr>
+            </table>
+            <p>範例，此部份大多用於判斷True、False，所以以下範例以Bool判斷為主</p>
+            <img src="../twoImage/2-2.jpg" />
+            <textarea id="TextArea1" rows="20" cols="70">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FormsPrt
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int a = 5, b = 5, c = 5, d = 4;
+            label1.Text = Convert.ToString(a == b);
+            label7.Text = Convert.ToString(c == d);
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int a = 5, b = 5, c = 5, d = 4;
+            label2.Text = Convert.ToString(a != b);
+            label8.Text = Convert.ToString(c != d);
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int a = 5, b = 6, c = 5, d = 4;
+            label3.Text = Convert.ToString(a > b);
+            label9.Text = Convert.ToString(c > d);
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int a = 5, b = 4, c = 5, d = 6;
+            label4.Text = Convert.ToString(a < b);
+            label10.Text = Convert.ToString(c < d);
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int a = 5, b = 5, c = 4, d = 5;
+            label5.Text = Convert.ToString(a >= b);
+            label11.Text = Convert.ToString(c >= d);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int a = 4, b = 5, c = 3, d = 2;
+            label6.Text = Convert.ToString(a <= b);
+            label12.Text = Convert.ToString(c <= d);
+        }
+    }
+}
+</textarea>
+            <hr />
+            <h2>邏輯運算式</h2>
+            <table style="width:70%;border:1px solid #0094ff;text-align:center;">
+                <tr>
+                    <th>符號</th>
+                    <th>意義</th>
+                    <th>運算式</th>
+                    <th>解釋</th>
+                </tr>
+                <tr>
+                    <td>&</td>
+                    <td>且AND</td>
+                    <td>a & b</td>
+                    <td>如果a和b的值皆為True，則結果顯示True<br />如果不是皆為True，則結果顯示False</td>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                    <td>且AND</td>
+                    <td>a && b</td>
+                    <td>如果a和b的值皆為True，則結果顯示True，否則結果顯示False<br />如果a判斷後是False，則不會去判斷b</td>
+                </tr>
+                <tr>
+                    <td>|</td>
+                    <td>或OR</td>
+                    <td>a | b</td>
+                    <td>如果a和b的其中一值為True，則結果顯示True，否則結果顯示False</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>或OR</td>
+                    <td>a || b</td>
+                    <td>先比較a的值，如果a的值為True<br />就不會去判斷b是否為True，直接結果顯示True</td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td>反向</td>
+                    <td>!a</td>
+                    <td>顯示結果為相反的值。例如a傳回True，結果顯示會是False</td>
+                </tr>
+            </table>
+            <p></p>
+            <input id="back" name="backButton" type="button" value="返回上一章" onclick="backButton()" />
+            <input id="next" name="nextButton" type="button" value="前往下一章" onclick="nextButton()" />
+        </div>
+
+        <div id="footer">
+            版權所有 copyright © 2021 吳泊諺 All Rights Reserved.
+        </div>
+
+    </div>
+    <input name="Button1" type="button" value="▲" class="button" onclick="click1()" />
+</body>
+</html>

@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../css/navRightDropDown.css" rel="stylesheet" type="text/css" />
+    <link href="../css/all.css" rel="stylesheet" type="text/css" />
+    <title>第一章 - 基本環境教學</title>
+    <style>
+        /*歡迎來到C#教學網*/
+        #topText{
+            position: relative;
+            top:20px;
+            left:156px;
+            font-size:20pt;
+            font-weight:bold;
+            letter-spacing:20px;
+            text-shadow:0 0 0.2em #4cff00 , 0 0 0.2em #4cff00;
+        }
+        
+        p{
+            font-weight:bold;
+        }
+    </style>
+    <script>
+        function backButton() {
+            alert("前一章是首頁，不做返回動作");
+        }
+        function nextButton() {
+            window.location.href = "../htmlGroup/two.html";
+        }
+        function click1() {
+            location.href = "#toptop";
+        }
+        function nowDate() {
+            var x = document.getElementById("date");
+            var current = new Date();
+            var strDate = current.getUTCFullYear() + "/" +
+                (current.getUTCMonth() + 1).toString() + "/" +
+                current.getUTCDate();
+            x.innerHTML = strDate;
+        }
+    </script>
+</head>
+<body onload="nowDate()">
+    <div id="toptop"></div>
+    <div id="wrapper">
+        <div id="navTop">
+            <div id="navTopleft">
+                <a href="../index.html" target="_blank"><img src="../indexImage/topCS.png" /></a>
+                <span id="navTopText">目前位置：第一章 - 基本環境教學</span>
+            </div>
+            <div id="navTopRight">
+                <ul class="dropDown">
+                    <li>
+                        <a href="#">文件參考▼</a>
+                        <ul>
+                            <li><a href="https://www.w3schools.com/cs/index.php" target="_blank">w3school</a></li>
+                            <li><a href="https://docs.microsoft.com/zh-tw/dotnet/csharp/" target="_blank">Microsoft</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">下載專區▼</a>
+                        <ul>
+                            <li><a href="https://visualstudio.microsoft.com/zh-hant/downloads/" target="_blank">VS 2019</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="top">
+            <span id="topText">基本環境教學</span>
+        </div>
+
+        <div id="navLeft">
+            <h2 style="text-align:left">↓章節選擇↓</h2>
+            <ul>
+                <li><a href="../htmlGroup/one.html" target="_blank">第一章 - 基本環境教學</a></li>
+                <li><a href="../htmlGroup/two.html" target="_blank">第二章 - 資料型別&變數</a></li>
+                <li><a href="../htmlGroup/three.html" target="_blank">第三章 - 介面設計與實作</a></li>
+                <li><a href="../htmlGroup/four.html" target="_blank">第四章 - if...else選擇結構</a></li>
+                <li><a href="../htmlGroup/five.html" target="_blank">第五章 - 迴圈</a></li>
+            </ul>
+            今天日期是：<br />
+            <div id="date"></div>
+        </div>
+
+        <div id="contect">
+            <h2>基本環境教學</h2>
+            <p>本章節會介紹Visual Studio的基本操作，並且會說明各按紐的功能。</p>
+            <hr />
+            <p>這是Visual Studio的預設畫面，畫面上有許多的功能按鈕，以下將會針對經常使用的按鈕進行介紹：</p>
+            <img src="../oneImage/1-1.jpg" />
+            <p>基本功能與一些資訊顯示。</p>
+            <img src="../oneImage/1-2.jpg" />
+            <p>由於這個教學是以介面化為主的教學，我們需要把工具箱打開，方便日後的操作。</p>
+            <img src="../oneImage/1-3.png" />
+            <p>位於右下的屬性視窗，在設計程式時，會需要用到這功能，它能讓我們做些簡單的樣式修改，不需要打程式碼。</p>
+            <p>Button按鈕的屬性(部份)</p>
+            <img src="../oneImage/1-4.jpg" />
+            <hr />
+            <h2>Hello World!</h2>
+            <p>
+                學程式的第一件事情，就是成功執行出"Hello World!"
+                有兩種方法可以使我們做出"Hello World!"的文字顯示
+            </p>
+            <p><span style="font-size:18pt;">第一種：</span>透過屬性視窗</p>
+            <p>首先先從工具箱中拉出一個Label，隨意放置在Form1表單內的任何位置</p>
+            <img src="../oneImage/1-5.jpg" />
+            <p>下一步，單擊Label1的文字，右下角會跳出屬性視窗，找到Text的屬性後，改成"Hello World!"</p>
+            <img src="../oneImage/1-6.jpg" />
+            <p>執行結果：</p>
+            <img src="../oneImage/1-7.jpg" />
+            <p><span style="font-size:18pt;">第二種：</span>寫程式碼</p>
+            <p>拉一個Button、Label到From1中。好了之後快速雙擊Button進入程式碼頁面</p>
+            <img src="../oneImage/1-8.jpg" />
+            <p>找到button1_Click(會自動產生)，輸入以下程式碼：</p>
+            <img src="../oneImage/1-9.jpg" />
+            <p>按Button後，執行結果：</p>
+            <p>本來是Label1，此時變成Hello World!了</p>
+            <img src="../oneImage/1-10.jpg" />
+            <p>完整程式碼：</p>
+            <textarea id="TextArea1" rows="20" cols="70">
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FormsPrt
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Hello World!";
+        }
+    }
+}</textarea>
+            <br />
+            <p>程式碼簡介：</p>
+            <img src="../oneImage/1-11.jpg" />
+            <p></p>
+            <input id="back" name="backButton" type="button" value="返回上一章" onclick="backButton()" />
+            <input id="next" name="nextButton" type="button" value="前往下一章" onclick="nextButton()" />
+        </div>
+
+        <div id="footer">
+            版權所有 copyright © 2021 吳泊諺 All Rights Reserved.
+        </div>
+
+    </div>
+    <input name="Button1" type="button" value="▲" class="button" onclick="click1()" />
+</body>
+</html>

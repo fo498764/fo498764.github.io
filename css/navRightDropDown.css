@@ -1,0 +1,40 @@
+﻿/* 導覽列右邊ul 整個ul*/
+#navTopRight ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    font-weight: bold;
+}
+/*ul的dropDown 文字邊框*/
+#navTopRight ul.dropDown{
+    display: inline-block; 
+    margin-top:15px;
+}
+/*次選單的 ul裡面的li li*/
+#navTopRight ul.dropDown li {
+    padding-left:20px;
+    padding-right:20px;
+}
+/*橫向排列*/
+#navTopRight ul.dropDown > li {
+     float: left; 
+}
+#navTopRight ul.dropDown a {
+    background-color: #39b706;
+    display: block;
+    text-decoration: none;
+    line-height: 40px;
+}
+/* 滑鼠移入次選單上層按鈕保持變色*/
+#navTopRight ul.dropDown li:hover > a { 
+    background-color: #ef5c28;
+    color: #fff;
+}
+/*隱藏次選單*/
+#navTopRight ul.dropDown ul {
+    display: none;
+}
+/* 滑鼠滑過去展開次選單*/
+#navTopRight ul.dropDown li:hover > ul {
+    display: inline-block;
+}
